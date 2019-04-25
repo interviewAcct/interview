@@ -9,16 +9,19 @@ public class RouteServiceApplication {
     public static void main(String[] args){
         RouteService routeService = new RouteService();
 
-        System.out.print("All routes: ");
-        routeService.printAllRoutes();
-
-        System.out.print("Unique routes: ");
-        routeService.printUniqueRoutes();
-
-        System.out.print("For user 42: ");
-        routeService.printAllRoutesByUser("42");
-
-        System.out.print("For user 42 services ");
-        routeService.printAllRoutesByService("42", "Komoot", "RWGPS");
+        switch(args[0].toLowerCase()) {
+            case "allroutes":
+                routeService.printAllRoutes();
+                break;
+            case "uniqueroutes":
+                routeService.printUniqueRoutes();
+                break;
+            case "routesbyuser" :
+                routeService.printAllRoutesByUser(args[1]);
+                break;
+            case "routesbyservice" :
+                routeService.printAllRoutesByService(args[1], Arrays.copyOfRange(args, 2, args.length));
+                break;
+        }
     }
 }

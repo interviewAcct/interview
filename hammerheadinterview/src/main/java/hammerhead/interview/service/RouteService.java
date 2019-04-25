@@ -14,6 +14,7 @@ public class RouteService {
     }
 
     public void printAllRoutes(){
+        System.out.print("All routes: ");
         List<String> completeRouteList = new ArrayList<>();
 
         for(RouteServiceEnum route: RouteServiceEnum.values()){
@@ -27,7 +28,7 @@ public class RouteService {
 
     public void printUniqueRoutes(){
         Set<String> completeRouteList = new HashSet<>();
-
+        System.out.println("Unique routes: ");
         for(RouteServiceEnum route: RouteServiceEnum.values()){
             RouteRetrieval routeRetrieval = routeRetrievalFactory.retrieveService(route);
             Routes routes = routeRetrieval.retrieveRoutes();
@@ -40,6 +41,7 @@ public class RouteService {
     public void printAllRoutesByUser(String id){
         List<String> completeRouteList = new ArrayList<>();
 
+        System.out.println("For user " + id + ": ");
         for(RouteServiceEnum route: RouteServiceEnum.values()){
             RouteRetrieval routeRetrieval = routeRetrievalFactory.retrieveService(route);
             Routes routes = routeRetrieval.retrieveRoutes(id);
@@ -52,6 +54,7 @@ public class RouteService {
     public void printAllRoutesByService(String id, String ... services){
         List<String> completeRouteList = new ArrayList<>();
 
+        System.out.print("For user " + id + " services ");
         for(String str: services) {
             RouteServiceEnum routeServiceEnum = RouteServiceEnum.valueOf(str.toUpperCase());
             RouteRetrieval routeRetrieval = routeRetrievalFactory.retrieveService(routeServiceEnum);
