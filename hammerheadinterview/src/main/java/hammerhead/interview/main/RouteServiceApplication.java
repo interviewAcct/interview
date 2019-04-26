@@ -1,27 +1,35 @@
 package hammerhead.interview.main;
 
 import hammerhead.interview.service.RouteService;
+import hammerhead.interview.validation.InputValidation;
 
-import java.util.Arrays;
-
-public class RouteServiceApplication {
+public class RouteServiceApplication extends InputValidation{
 
     public static void main(String[] args){
         RouteService routeService = new RouteService();
 
-        switch(args[0].toLowerCase()) {
+        String appName = isValidAppChoice(args) ? args[0] : "";
+
+        switch(appName.toLowerCase()) {
             case "allroutes":
-                routeService.printAllRoutes();
-                break;
+                    routeService.printAllRoutes();
+                    break;
             case "uniqueroutes":
-                routeService.printUniqueRoutes();
-                break;
+                    routeService.printUniqueRoutes();
+                    break;
             case "routesbyuser" :
-                routeService.printAllRoutesByUser(args[1]);
-                break;
+                    if(isValidUserName(args)) {
+                        routeService.printAllRoutesByUser(args[1]);
+                    }
+                    break;
             case "routesbyservice" :
-                routeService.printAllRoutesByService(args[1], Arrays.copyOfRange(args, 2, args.length));
-                break;
+                    String []serviceArray = retrieveValidServices(args);
+                    if(isValidUserName(args) && serviceArray.length > 0) {
+                        routeService.printAllRoutesByService(args[1], serviceArray);
+                    }
+                    break;
+            default:
+                    System.out.println("INVALID INPUT, PLEASE REFER TO README ON HOW TO CALL SERVICE");
         }
     }
 }

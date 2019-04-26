@@ -1,26 +1,19 @@
 package hammerhead.interview.service;
 
 import hammerhead.interview.service.pojo.Routes;
-import hammerhead.interview.service.mapper.YamlMapper;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class RWGPSRouteRetrievalService implements RouteRetrieval{
+public class RWGPSRouteRetrievalService extends RouteRetrievalService{
 
-    private YamlMapper yamlMapper;
-    private final String yamlFile = "hammerheadinterview/src/main/resources/RWGPSRoutes.yaml";
+    private final static String RWGPS_YAML_FILE = "hammerheadinterview/src/main/resources/RWGPSRoutes.yaml";
 
     public RWGPSRouteRetrievalService(){
-        this.yamlMapper = new YamlMapper();
-    }
-
-    public Routes retrieveRoutes() {
-        return yamlMapper.mapRoutes(yamlFile);
+        super(RWGPS_YAML_FILE);
     }
 
     public Routes retrieveRoutes(String id) {
-        Routes routes = yamlMapper.mapRoutes(yamlFile);
+        Routes routes = this.getRoutes();
         List<String> idRoutes = routes.getRoutes().stream().map(str->str + id).collect(Collectors.toList());
         routes.setRoutes(idRoutes);
         return routes;

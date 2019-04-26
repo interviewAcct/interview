@@ -14,9 +14,11 @@ Follow the following steps to run:
         -routesbyuser [USER ID]
         -routesbyservice [USER ID] [SERVICES]
 
-    -[USER ID] : Any AlphaNumeric or Numeric containing no spaces or tabs.
-    -[SERVICES] : Komoot, RWGP, Strava
+    -[USER ID] : Any of at least 1 character in length
+    -[SERVICES] : Komoot, RWGP, Strava, (If valid repeated services with the same name are used it will only process
+      that service once and any invalid services will be ignored but will continue to process valid services that are
+      a part of the given list).
 
     example
         java -jar C:\Users\Brett\IdeaProjects\hamInterview\out\artifacts\hamInterview_jar\hamInterview.jar
-        routesbyservice 42 Komoot, STRAVA
+        routesbyservice 42 Komoot STRAVA

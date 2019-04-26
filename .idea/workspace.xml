@@ -6,25 +6,70 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6507c38-740e-4632-8ff6-a13c8abaad8f" name="Default Changelist" comment="updated code to pass test case">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hammerheadinterview/target/classes/KomootRoutes.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hammerheadinterview/target/classes/RWGPSRoutes.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hammerheadinterview/target/classes/StravaRoutes.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hammerheadinterview/target/classes/hammerhead/interview/main/RouteServiceApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hammerheadinterview/target/classes/hammerhead/interview/service/KomootRouteRetrievalService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hammerheadinterview/target/classes/hammerhead/interview/service/RWGPSRouteRetrievalService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hammerheadinterview/target/classes/hammerhead/interview/service/RouteRetrieval.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hammerheadinterview/target/classes/hammerhead/interview/service/RouteService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hammerheadinterview/target/classes/hammerhead/interview/service/StravaRouteRetrievalService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hammerheadinterview/target/classes/hammerhead/interview/service/constants/RouteServiceEnum.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hammerheadinterview/target/classes/hammerhead/interview/service/hammerhead/interview/routes/service/factory/RouteRetrievalFactory$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hammerheadinterview/target/classes/hammerhead/interview/service/hammerhead/interview/routes/service/factory/RouteRetrievalFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hammerheadinterview/target/classes/hammerhead/interview/service/mapper/YamlMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hammerheadinterview/target/classes/hammerhead/interview/service/pojo/Routes.class" afterDir="false" />
+    <list default="true" id="e6507c38-740e-4632-8ff6-a13c8abaad8f" name="Default Changelist" comment="Changes made per code review.&#10;&#10;Added validation check to input.&#10;Consolidated duplcate code.">
+      <change afterPath="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/KomootRetrievalService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/RouteRetrievalService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/constants/ApplicationServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/validation/InputValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/hamInterview_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/hamInterview.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_8_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_8_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_yaml_2_9_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_jaxrs_jackson_jaxrs_base_2_8_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_jaxrs_jackson_jaxrs_json_provider_2_8_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_8_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_ws_rs_javax_ws_rs_api_2_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jaxen_jaxen_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_external_aopalliance_repackaged_2_5_0_b32.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_external_javax_inject_2_5_0_b32.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_api_2_5_0_b32.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_locator_2_5_0_b32.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_utils_2_5_0_b32.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_osgi_resource_locator_1_0_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_bundles_repackaged_jersey_guava_2_25_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_client_2_25_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_common_2_25_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_ext_jersey_entity_filtering_2_25_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_media_jersey_media_json_jackson_2_25_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_20_0_GA.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_1_2_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_1_2_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_1_2_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_23.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hammerheadinterview/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/hammerheadinterview/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/main/RouteServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/main/RouteServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hammerheadinterview/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/hammerheadinterview/target/classes/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/KomootRouteRetrievalService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/RWGPSRouteRetrievalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/RWGPSRouteRetrievalService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/RouteRetrieval.java" beforeDir="false" afterPath="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/RouteRetrieval.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/RouteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/RouteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/StravaRouteRetrievalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/StravaRouteRetrievalService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/constants/RouteServiceEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/constants/RouteServiceEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/hammerhead/interview/routes/service/factory/RouteRetrievalFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hammerheadinterview/target/classes/KomootRoutes.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hammerheadinterview/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hammerheadinterview/target/classes/RWGPSRoutes.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hammerheadinterview/target/classes/StravaRoutes.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hammerheadinterview/target/classes/hammerhead/interview/main/RouteServiceApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hammerheadinterview/target/classes/hammerhead/interview/service/KomootRouteRetrievalService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hammerheadinterview/target/classes/hammerhead/interview/service/RWGPSRouteRetrievalService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hammerheadinterview/target/classes/hammerhead/interview/service/RouteRetrieval.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hammerheadinterview/target/classes/hammerhead/interview/service/RouteService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hammerheadinterview/target/classes/hammerhead/interview/service/StravaRouteRetrievalService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hammerheadinterview/target/classes/hammerhead/interview/service/constants/RouteServiceEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hammerheadinterview/target/classes/hammerhead/interview/service/hammerhead/interview/routes/service/factory/RouteRetrievalFactory$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hammerheadinterview/target/classes/hammerhead/interview/service/hammerhead/interview/routes/service/factory/RouteRetrievalFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hammerheadinterview/target/classes/hammerhead/interview/service/mapper/YamlMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/hammerheadinterview/target/classes/hammerhead/interview/service/pojo/Routes.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/hamInterview_jar/hamInterview.jar" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/hammerheadinterview/target/" />
@@ -35,105 +80,56 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/constants/RouteServiceEnum.java">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="68">
+                    <caret line="4" column="28" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="28" />
+                    <folding>
+                      <element signature="e#378#379#0" expanded="true" />
+                      <element signature="e#442#443#0" expanded="true" />
+                      <element signature="e#357#358#0" expanded="true" />
+                      <element signature="e#480#481#0" expanded="true" />
+                      <element signature="e#736#737#0" expanded="true" />
+                      <element signature="e#763#764#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/StravaRouteRetrievalService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="51" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/main/RouteServiceApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/RouteRetrieval.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/RWGPSRouteRetrievalService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/constants/RouteServiceEnum.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+              <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/hammerhead/interview/routes/service/factory/RouteRetrievalFactory.java">
+        <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/constants/ApplicationServices.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="238">
+              <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
               <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/KomootRouteRetrievalService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="64" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="64" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/hammerheadinterview/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" selection-start-line="10" selection-end-line="21" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/RouteService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#299#300#0" expanded="true" />
+                <element signature="e#344#345#0" expanded="true" />
+                <element signature="e#398#399#0" expanded="true" />
+                <element signature="e#417#418#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -151,7 +147,88 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/pojo/Routes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/RouteRetrieval.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/RWGPSRouteRetrievalService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/RouteRetrievalService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hammerheadinterview/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="100" selection-start-line="18" selection-start-column="100" selection-end-line="18" selection-end-column="100" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/KomootRetrievalService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#437#438#0" expanded="true" />
+                <element signature="e#487#488#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/RouteService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -159,7 +236,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/hammerheadinterview/pom.xml" />
         <option value="$PROJECT_DIR$/hammerheadinterview/src/main/java/interview/service/mapper/YamlMapper.java" />
         <option value="$PROJECT_DIR$/hammerheadinterview/src/main/java/interview/service/RouteRetrieval.java" />
         <option value="$PROJECT_DIR$/hammerheadinterview/src/main/java/interview/service/KomootRouteRetrievalService.java" />
@@ -168,17 +244,29 @@
         <option value="$PROJECT_DIR$/hammerheadinterview/src/main/java/interview/service/RWGPSRouteRetrievalService.java" />
         <option value="$PROJECT_DIR$/hammerheadinterview/src/main/java/interview/service/RouteService.java" />
         <option value="$PROJECT_DIR$/hammerheadinterview/src/main/java/interview/service/hammerhead/interview/routes/service/factory/RouteRetrievalFactory.java" />
+        <option value="$PROJECT_DIR$/hammerheadinterview/src/main/resources/KomootRoutes.yaml" />
+        <option value="$PROJECT_DIR$/hammerheadinterview/src/main/resources/RWGPSRoutes.yaml" />
+        <option value="$PROJECT_DIR$/hammerheadinterview/src/main/resources/StravaRoutes.yaml" />
+        <option value="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/hammerhead/interview/routes/service/factory/RouteRetrievalFactory.java" />
+        <option value="$PROJECT_DIR$/hammerheadinterview/pom.xml" />
+        <option value="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/constants/ApplicationServices.java" />
         <option value="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/KomootRouteRetrievalService.java" />
-        <option value="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/RWGPSRouteRetrievalService.java" />
-        <option value="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/StravaRouteRetrievalService.java" />
+        <option value="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/RouteRetrieval.java" />
+        <option value="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/RouteService.java" />
+        <option value="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/constants/RouteServiceEnum.java" />
         <option value="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/main/RouteServiceApplication.java" />
+        <option value="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/validation/InputValidation.java" />
         <option value="$PROJECT_DIR$/hammerheadinterview/README.md" />
+        <option value="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/KomootRetrievalService.java" />
+        <option value="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/StravaRouteRetrievalService.java" />
+        <option value="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/RWGPSRouteRetrievalService.java" />
+        <option value="$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/RouteRetrievalService.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2344" />
-    <option name="y" value="169" />
+    <option name="x" value="381" />
+    <option name="y" value="-10" />
     <option name="width" value="1400" />
     <option name="height" value="1016" />
   </component>
@@ -187,7 +275,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -200,11 +287,62 @@
               <item name="hamInterview" type="462c0819:PsiDirectoryNode" />
               <item name="hammerheadinterview" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="hamInterview" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hamInterview" type="462c0819:PsiDirectoryNode" />
+              <item name="hammerheadinterview" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hamInterview" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hamInterview" type="462c0819:PsiDirectoryNode" />
+              <item name="hammerheadinterview" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hamInterview" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hamInterview" type="462c0819:PsiDirectoryNode" />
+              <item name="hammerheadinterview" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hamInterview" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hamInterview" type="462c0819:PsiDirectoryNode" />
+              <item name="hammerheadinterview" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="interview" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hamInterview" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hamInterview" type="462c0819:PsiDirectoryNode" />
+              <item name="hammerheadinterview" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="interview" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hamInterview" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hamInterview" type="462c0819:PsiDirectoryNode" />
+              <item name="hammerheadinterview" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="interview" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -217,11 +355,11 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Brett\IdeaProjects\hamInterview\hammerheadinterview\src\main\resources" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Brett\IdeaProjects\hamInterview\hammerheadinterview\src\main\java\interview\service\hammerhead\interview\routes\service\factory" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Brett\IdeaProjects\hamInterview\hammerheadinterview\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -295,39 +433,60 @@
       <option name="project" value="LOCAL" />
       <updated>1556229120510</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Reverting code to first initial commit">
+      <created>1556229432423</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1556229432423</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Jar recommited">
+      <created>1556229491233</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1556229491233</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Added additional console output">
+      <created>1556229948328</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1556229948328</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18020834" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32984293" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32984293" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Maven" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32984293" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
@@ -335,16 +494,129 @@
     <MESSAGE value="README added to instruct user to run the code locally" />
     <MESSAGE value="JAR for running the following code" />
     <MESSAGE value="updated code to pass test case" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated code to pass test case" />
+    <MESSAGE value="Reverting code to first initial commit" />
+    <MESSAGE value="Jar recommited" />
+    <MESSAGE value="Added additional console output" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added additional console output" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/resources/KomootRoutes.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/resources/StravaRoutes.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/resources/RWGPSRoutes.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hammerheadinterview/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-368">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+        <state relative-caret-position="703">
+          <caret line="71" column="30" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/lang/Enum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="143" column="25" selection-start-line="143" selection-start-column="25" selection-end-line="143" selection-end-column="25" />
+          <folding>
+            <element signature="e#4483#4484#0" expanded="true" />
+            <element signature="e#4517#4518#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/util/Arrays.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="3948" column="26" selection-start-line="3948" selection-start-column="26" selection-end-line="3948" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.1/lib/src.zip!/java.base/java/util/Set.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="217" column="12" selection-start-line="217" selection-start-column="12" selection-end-line="217" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/validation/InputValidation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/main/RouteServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/hammerhead/interview/routes/service/factory/RouteRetrievalFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#314#315#0" expanded="true" />
+            <element signature="e#367#368#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/constants/RouteServiceEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="28" />
+          <folding>
+            <element signature="e#378#379#0" expanded="true" />
+            <element signature="e#442#443#0" expanded="true" />
+            <element signature="e#357#358#0" expanded="true" />
+            <element signature="e#480#481#0" expanded="true" />
+            <element signature="e#736#737#0" expanded="true" />
+            <element signature="e#763#764#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hammerheadinterview/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="100" selection-start-line="18" selection-start-column="100" selection-end-line="18" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/constants/ApplicationServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+          <folding>
+            <element signature="e#299#300#0" expanded="true" />
+            <element signature="e#344#345#0" expanded="true" />
+            <element signature="e#398#399#0" expanded="true" />
+            <element signature="e#417#418#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -358,84 +630,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/hammerhead/interview/routes/service/factory/RouteRetrievalFactory.java">
+    <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/pojo/Routes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/constants/RouteServiceEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/RouteRetrieval.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        <state relative-caret-position="119">
+          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/KomootRetrievalService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#437#438#0" expanded="true" />
+            <element signature="e#487#488#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/StravaRouteRetrievalService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="51" selection-start-line="11" selection-start-column="51" selection-end-line="11" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/RWGPSRouteRetrievalService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="57" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/KomootRouteRetrievalService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="64" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/RouteService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
+        <state relative-caret-position="153">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/main/RouteServiceApplication.java">
+    <entry file="file://$PROJECT_DIR$/hammerheadinterview/src/main/java/hammerhead/interview/service/RouteRetrievalService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hammerheadinterview/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="21" selection-end-column="41" />
         </state>
       </provider>
     </entry>

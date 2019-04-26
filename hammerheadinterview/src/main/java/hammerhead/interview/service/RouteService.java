@@ -1,6 +1,5 @@
 package hammerhead.interview.service;
 
-import hammerhead.interview.service.hammerhead.interview.routes.service.factory.RouteRetrievalFactory;
 import hammerhead.interview.service.pojo.Routes;
 import hammerhead.interview.service.constants.RouteServiceEnum;
 
@@ -8,18 +7,13 @@ import java.util.*;
 
 public class RouteService {
 
-    private RouteRetrievalFactory routeRetrievalFactory;
-    public RouteService(){
-        this.routeRetrievalFactory = new RouteRetrievalFactory();
-    }
-
     public void printAllRoutes(){
         System.out.print("All routes: ");
         List<String> completeRouteList = new ArrayList<>();
 
         for(RouteServiceEnum route: RouteServiceEnum.values()){
-            RouteRetrieval routeRetrieval = routeRetrievalFactory.retrieveService(route);
-            Routes routes = routeRetrieval.retrieveRoutes();
+            RouteRetrieval routeRetrieval = route.getInstance();
+            Routes routes = routeRetrieval.getRoutes();
             completeRouteList.addAll(routes.getRoutes());
         }
 
@@ -28,10 +22,10 @@ public class RouteService {
 
     public void printUniqueRoutes(){
         Set<String> completeRouteList = new HashSet<>();
-        System.out.println("Unique routes: ");
+        System.out.print("Unique routes: ");
         for(RouteServiceEnum route: RouteServiceEnum.values()){
-            RouteRetrieval routeRetrieval = routeRetrievalFactory.retrieveService(route);
-            Routes routes = routeRetrieval.retrieveRoutes();
+            RouteRetrieval routeRetrieval = route.getInstance();
+            Routes routes = routeRetrieval.getRoutes();
             completeRouteList.addAll(routes.getRoutes());
         }
 
@@ -41,9 +35,9 @@ public class RouteService {
     public void printAllRoutesByUser(String id){
         List<String> completeRouteList = new ArrayList<>();
 
-        System.out.println("For user " + id + ": ");
+        System.out.print("For user " + id + ": ");
         for(RouteServiceEnum route: RouteServiceEnum.values()){
-            RouteRetrieval routeRetrieval = routeRetrievalFactory.retrieveService(route);
+            RouteRetrieval routeRetrieval = route.getInstance();
             Routes routes = routeRetrieval.retrieveRoutes(id);
             completeRouteList.addAll(routes.getRoutes());
         }
@@ -57,7 +51,7 @@ public class RouteService {
         System.out.print("For user " + id + " services ");
         for(String str: services) {
             RouteServiceEnum routeServiceEnum = RouteServiceEnum.valueOf(str.toUpperCase());
-            RouteRetrieval routeRetrieval = routeRetrievalFactory.retrieveService(routeServiceEnum);
+            RouteRetrieval routeRetrieval = routeServiceEnum.getInstance();
             Routes routes = routeRetrieval.retrieveRoutes(id);
             completeRouteList.addAll(routes.getRoutes());
         }

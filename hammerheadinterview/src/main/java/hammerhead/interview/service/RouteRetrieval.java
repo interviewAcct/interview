@@ -4,6 +4,6 @@ import hammerhead.interview.service.pojo.Routes;
 
 public interface RouteRetrieval {
 
-    Routes retrieveRoutes();
+    Routes getRoutes();
     Routes retrieveRoutes(String id);
 }
